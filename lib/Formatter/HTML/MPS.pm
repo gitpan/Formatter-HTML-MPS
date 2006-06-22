@@ -58,13 +58,14 @@ use strict;
 use warnings;
 
 use Carp;
-use Formatter::HTML::MPS::OutputFormats;
 use Exporter;
+use Formatter::HTML::MPS::OutputFormats;
+use HTML::LinkExtor;
 use Text::Markdown;
-use vars qw($VERSION @ISA @EXPORT );
+use vars qw( $VERSION @ISA @EXPORT );
 
 @ISA = ('Exporter');
-$VERSION = '0.1';
+$VERSION = '0.2';
 @EXPORT = ( 'generate' );
 
 
@@ -187,9 +188,31 @@ sub title {
 
 =cut
 sub links {
-    # TODO: implement this. :)
+    my $self = shift;
 
-    return undef;
+    my @links = ();
+
+    my $cb = sub {
+        my($tag, %attr) = @_;
+        return if $tag ne 'a';
+        push @links, values %attr;
+    };
+
+    my $xtor = HTML::LinkExtor->new( $cb );
+    $xtor->parse( $self->{html} );
+
+    return @links;
+}
+
+
+
+=head2 fragment
+
+=cut
+sub fragment {
+    my $self = shift;
+    my ( $fragment ) = ( $self->{html} =~ /<body>(.*)<\/body>/s );
+    return $fragment;
 }
 
 

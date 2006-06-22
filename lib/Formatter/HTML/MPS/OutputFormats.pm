@@ -4,11 +4,11 @@ use strict;
 use warnings;
 
 use Exporter;
-use vars qw( @ISA @EXPORT );
+use vars qw( @ISA @EXPORT $VERSION);
 
 @ISA = qw( Exporter );
 @EXPORT = qw( %HEADERS %FOOTERS %CSS );
-
+$VERSION = '0.2';
 
 our %HEADERS = (
                 'xhtml1.0_strict' =>

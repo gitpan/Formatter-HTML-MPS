@@ -40,7 +40,23 @@ Currently, supported variables are:
  * title: the title of the presentation.
 
 
+Usage
+-----
+
+$ mpslidemaker.pl test.mps
+
+
+
+Supported browsers
+------------------
+In theory, the default CSS should be usable with all HTML viewers that
+support the projection media type in CSS. In practice, this has only
+been tested with the Opera browser (where you can press F11 to enter
+"projection mode").
+
+
 
 More information
 ----------------
 Markdown: <URL: http://daringfireball.net/projects/markdown/ >
+OperaShow: <URL: http://www.opera.com/support/tutorials/operashow/ >
