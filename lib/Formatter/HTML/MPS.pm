@@ -65,7 +65,7 @@ use Text::Markdown;
 use vars qw( $VERSION @ISA @EXPORT );
 
 @ISA = ('Exporter');
-$VERSION = '0.2';
+$VERSION = '0.3';
 @EXPORT = ( 'generate' );
 
 
@@ -280,7 +280,7 @@ sub _header {
 
     $header .=<<END;
 <div class="layout">
-<div id="title">$title</div>
+<div id="title"><span>$title</span></div>
 <div id="author">$author</div>
 <div id="bottomleft">&nbsp;</div>
 <div id="bottomright">&nbsp;</div>
@@ -359,6 +359,7 @@ body    {
 
       .layout > div { line-height: 6em; font-size: 0.5em; font-weight: bold; color: white; }
       .layout #title { position: fixed; top: 0px; left: 0px; padding-left: 1em; width: 100%; background-color: #dd0000; display:block; }
+      .layout #title span { font-size: 2em; }
       .layout #author { z-index:2; position: fixed; top: 0px; right: 0px; padding-right:1em; background-color: transparent; width: 50%; text-align: right; display:block; }
       .layout #bottomleft { position: fixed; bottom: 0px; left: 0px; padding-left:1em; width: 100%; background-color: #dd0000; display:block; }
       .layout #bottomright { z-index:2; position: fixed; bottom: 0px; right: 0px; padding-right:1em; background-color: transparent; width: 50%; text-align: right; display:block; }
