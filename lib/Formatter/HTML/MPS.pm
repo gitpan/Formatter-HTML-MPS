@@ -65,7 +65,7 @@ use Text::Markdown;
 use vars qw( $VERSION @ISA @EXPORT );
 
 @ISA = ('Exporter');
-$VERSION = '0.3';
+$VERSION = '0.4';
 @EXPORT = ( 'generate' );
 
 

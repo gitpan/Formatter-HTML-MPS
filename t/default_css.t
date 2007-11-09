@@ -14,9 +14,6 @@ my $expected_data = join( '', <$fh1> );
 my $formatter = Formatter::HTML::MPS->format( $mps_data );
 my $generated = $formatter->document();
 
-#open my $fh, '>', 'output.html';
-#print $fh $generated;
-
 ok( $generated eq $expected_data );
 
 
